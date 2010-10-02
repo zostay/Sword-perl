@@ -1,0 +1,3 @@
+TYPEMAP
+SWMgr *	    T_PTROBJ
+SWModule *  T_PTROBJ
