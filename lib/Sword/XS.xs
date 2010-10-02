@@ -47,26 +47,3 @@ get_key_text(SWModule *module, char *key)
         RETVAL = module->RenderText();
     OUTPUT:
         RETVAL
-
-SV *
-kjv(SV *key)
-    CODE:
-        SWMgr library(new MarkupFilterMgr(FMT_PLAIN));
-        SWModule *target;
-        STRLEN len;
-
-        target = library.getModule("KJV");
-        if (!target) {
-            XSRETURN_UNDEF;
-        }
-        
-        target->setKey(SvPV(key, len));
-        RETVAL = newSVpv(target->RenderText(), 0);
-    OUTPUT:
-        RETVAL
-        
-
-void
-hello()
-    CODE:
-        printf("Hello world!\n");

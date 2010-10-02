@@ -3,15 +3,12 @@ no Moose;
 use Test::More tests => 3;
 
 use_ok('Sword::XS');
-Sword::XS::hello;
-
-diag explain Sword::XS::kjv('john 3:16');
 
 my $library = Sword::XS::get_library();
-diag explain $library;
+#diag explain $library;
 
 my @modules = Sword::XS::list_modules($library);
-diag explain \@modules;
+#diag explain \@modules;
 
 my %john316 = (
     KJV => "\nFor God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.\n",
@@ -24,11 +21,11 @@ for my $name (keys %john316) {
         #    unless grep /^\Q$name\E$/, @modules;
 
         my $module = Sword::XS::get_module($library, $name);
-        diag explain $module;
+        #diag explain $module;
 
         my $text = Sword::XS::get_key_text($module, 'john 3:16');
 
-        diag $text;
+        #diag $text;
 
         is($text, $john316{$name});
     }
