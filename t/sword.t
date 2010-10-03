@@ -5,12 +5,12 @@ use Test::More;
 
 plan tests => 1 + $main::total_tests;
 
-use_ok('Sword::XS');
+use_ok('Sword');
 
-my $library = Sword::XS::get_library();
+my $library = Sword->new;
 #diag explain $library;
 
-my @modules = Sword::XS::list_modules($library);
+my @modules = $library->modules;
 #diag explain \@modules;
 
 for my $name (keys %main::tests) {
@@ -18,11 +18,11 @@ for my $name (keys %main::tests) {
         skip "$name is not in your Sword library", $subtotal_tests{$name}
             unless grep { $_ eq $name } @modules;
 
-        my $module = Sword::XS::get_module($library, $name);
+        my $module = $library->module($name);
         #diag explain $module;
 
         for my $key (keys %{ $main::tests{$name} }) {
-            my $text = Sword::XS::get_key_text($module, $key);
+            my $text = $module->lookup_text($key);
 
             #diag $text;
 
