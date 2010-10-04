@@ -1,0 +1,7 @@
+{{$NEXT}}
+
+    * The initial release of the Sword library
+    * Provides Sword::Manager to interface with SWMgr. Provides a new
+      constructor, and modules and get_module methods.
+    * Provides Sword::Module to interface with SWModule. Provides name,
+      description, type, set_key, and render_text methods.
