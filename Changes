@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+0.102770  2010-10-04 18:18:50 America/Chicago
+
     * The initial release of the Sword library
     * Provides Sword::Manager to interface with SWMgr. Provides a new
       constructor, and modules and get_module methods.
