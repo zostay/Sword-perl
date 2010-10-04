@@ -37,10 +37,10 @@ See the POD in Sword.pm for usage:
 
   perldoc Sword
 
-This archive contains the distribution {$dist->name},
-version {$dist->version}:
+This archive contains the distribution {{$dist->name}},
+version {{$dist->version}}:
 
-  {$dist->abstract}
+  {{$dist->abstract}}
 
-{$dist->license->notice}
+{{$dist->license->notice}}
 
