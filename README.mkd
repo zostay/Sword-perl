@@ -10,22 +10,22 @@ to help with this.
 
 On a Debian or Ubuntu system, this means:
 
-  sudo aptitude install build-essential libsword-dev
+    sudo aptitude install build-essential libsword-dev
 
 To install from github, you need to check out the library:
 
-  git clone git://github.com/zostay/Sword-perl.git
-  cd Sword-perl
+    git clone git://github.com/zostay/Sword-perl.git
+    cd Sword-perl
 
 You may need to install Dist::Zilla and some plugins for that to work:
 
-  cpanm Dist::Zilla
-  cpanm Dist::Zilla::Plugin::Git::Check
-  cpanm Dist::Zilla::Plugin::TemplateFiles
+    cpanm Dist::Zilla
+    cpanm Dist::Zilla::Plugin::Git::Check
+    cpanm Dist::Zilla::Plugin::TemplateFiles
 
 Then run:
 
-  dzil install
+    dzil install
 
 The installation has (so far) only been tested on Linux by myself. Mac OS X
 should be similar. If you want to use this on Windows, please give it a shot and
@@ -38,7 +38,7 @@ I will try to watch CPANTS to see if I can get other platforms working.
 
 See the POD in Sword.pm for usage:
 
-  perldoc Sword
+    perldoc Sword
 
 ## COPYRIGHT
 
