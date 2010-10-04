@@ -1,0 +1,46 @@
+INSTALLATION
+
+You must already have a copy of the Sword library installed on your system with
+the development libraries. In the future, I may provide an Alien::Sword library
+to help with this.
+
+On a Debian or Ubuntu system, this means:
+
+  sudo aptitude install build-essential libsword-dev
+
+The usual Perl installation should do the trick.
+
+I recommand installing App::cpanminus and running:
+
+  cpanm Sword
+
+OR the regular CPAN should work:
+
+  cpanm Sword 
+
+OR manually, by downloading, unpacking the tarball, and running this from the
+unpacked directory:
+
+  perl Makefile.PL
+  make
+  make test
+  make install
+
+The installation has (so far) only been tested on Linux by myself. Mac OS X
+should be similar. If you want to use this on Windows, please give it a shot and
+let me know what goes wrong. I have a Windows machine I can try it on if someone
+wants it.
+
+I will try to watch CPANTS to see if I can get other platforms working.
+
+See the POD in Sword.pm for usage:
+
+  perldoc Sword
+
+This archive contains the distribution {$dist->name},
+version {$dist->version}:
+
+  {$dist->abstract}
+
+{$dist->license->notice}
+

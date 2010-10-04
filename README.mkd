@@ -1,0 +1,49 @@
+# README
+
+This is the README file just for github. If you want the regular one, see the README file listed at [CPAN](http://search.cpan.org/dist/Sword/).
+
+## INSTALLATION
+
+You must already have a copy of the Sword library installed on your system with
+the development libraries. In the future, I may provide an Alien::Sword library
+to help with this.
+
+On a Debian or Ubuntu system, this means:
+
+  sudo aptitude install build-essential libsword-dev
+
+To install from github, you need to check out the library:
+
+  git clone git://github.com/zostay/Sword-perl.git
+  cd Sword-perl
+
+You may need to install Dist::Zilla and some plugins for that to work:
+
+  cpanm Dist::Zilla
+  cpanm Dist::Zilla::Plugin::Git::Check
+  cpanm Dist::Zilla::Plugin::TemplateFiles
+
+Then run:
+
+  dzil install
+
+The installation has (so far) only been tested on Linux by myself. Mac OS X
+should be similar. If you want to use this on Windows, please give it a shot and
+let me know what goes wrong. I have a Windows machine I can try it on if someone
+wants it.
+
+I will try to watch CPANTS to see if I can get other platforms working.
+
+## GETTING STARTED
+
+See the POD in Sword.pm for usage:
+
+  perldoc Sword
+
+## COPYRIGHT
+
+This software is copyright (c) 2010 by Qubling Software LLC.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+

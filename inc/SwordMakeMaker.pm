@@ -9,8 +9,8 @@ override _build_WriteMakefile_args => sub {
     return +{
         %{ super() },
         CC       => 'g++',
-        INC      => '-I/home/sterling/local/include/sword',
-        LIBS     => [ '-L/home/sterling/local/lib -lsword' ],
+        INC      => '-I/usr/include/sword',
+        LIBS     => [ '-lsword' ],
         XSOPT    => '-C++ -noprototypes',
     };
 };

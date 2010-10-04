@@ -14,7 +14,7 @@ my %tests = (
         description => 'English Standard Version',
         type => 'Biblical Texts',
         keys => {
-            'John 3:16' => "\nFor  [] God so loved  [] the world,  [] that he gave his only Son, that whoever believes in him should not  [] perish but have eternal life.",
+            'John 3:16' => "\nFor  (Rom. 5:8; Eph. 2:4; 2 Thess. 2:16; 1 John 3:1; 4:9, 10)God so loved  (See ch. 1:29)the world,  (Rom. 8:32)that he gave his only Son, that whoever believes in him should not  (ch. 10:28)perish but have eternal life.",
         },
     },
     WebstersDict => {
@@ -38,7 +38,7 @@ for my $module (keys %tests) {
 
     $total_tests += $subtotal_tests{$module};
 }
-plan tests => 2 + $main::total_tests;
+plan tests => 2 + $total_tests;
 
 use_ok('Sword::Manager');
 use_ok('Sword::Module');
@@ -49,7 +49,7 @@ my $library = Sword::Manager->new;
 my $modules = $library->modules;
 #diag explain $modules;
 
-for my $name (keys %main::tests) {
+for my $name (keys %tests) {
     SKIP: {
         skip "$name is not in your Sword library", $subtotal_tests{$name}
             unless grep { $_->name eq $name } @$modules;
@@ -68,13 +68,13 @@ for my $name (keys %main::tests) {
         is($module->description, $description, "description of $name checks out");
         is($module->type, $type, "name of $name checks out");
 
-        for my $key (keys %{ $main::tests{$name}{keys} }) {
+        for my $key (keys %{ $tests{$name}{keys} }) {
             $module->set_key($key);
             my $text = $module->render_text;
 
             #diag $text;
 
-            is($text, $main::tests{$name}{keys}{$key}, 
+            is($text, $tests{$name}{keys}{$key}, 
                 "lookup $key in $name checks out");
         }
     }
