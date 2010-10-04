@@ -22,6 +22,7 @@ You may need to install Dist::Zilla and some plugins for that to work:
     cpanm Dist::Zilla
     cpanm Dist::Zilla::Plugin::Git::Check
     cpanm Dist::Zilla::Plugin::TemplateFiles
+    cpanm Dist::Zilla::Plugin::PodWeaver
 
 Then run:
 
