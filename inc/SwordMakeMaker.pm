@@ -15,7 +15,7 @@ override _build_WriteMakefile_args => sub {
         LIBS     => [ '-L/home/sterling/local/lib -lsword' ],
         OBJECT   => 'lib/Sword/XS.o',
         XS       => { 'lib/Sword/XS.xs' => 'lib/Sword/XS.c' },
-        XSOPT    => '-C++',
+        XSOPT    => '-C++ -noprototypes',
     };
 };
 

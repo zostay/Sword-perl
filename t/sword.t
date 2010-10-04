@@ -3,11 +3,12 @@ no Moose;
 require 't/passages.pl';
 use Test::More;
 
-plan tests => 1 + $main::total_tests;
+plan tests => 2 + $main::total_tests;
 
-use_ok('Sword');
+use_ok('Sword::Manager');
+use_ok('Sword::Module');
 
-my $library = Sword->new;
+my $library = Sword::Manager->new;
 #diag explain $library;
 
 my @modules = $library->modules;

@@ -8,22 +8,25 @@
 
 using namespace sword;
 
-MODULE = Sword                  PACKAGE = Sword::XS
+typedef SWMgr    Sword_Manager;
+typedef SWModule Sword_Module;
 
-SWMgr *
-get_library()
+MODULE = Sword                  PACKAGE = Sword::Manager
+
+Sword_Manager *
+Sword_Manager::new()
     CODE:
         RETVAL = new SWMgr(new MarkupFilterMgr(FMT_PLAIN));
     OUTPUT:
         RETVAL
 
 AV *
-list_modules(SWMgr *library)
+Sword_Manager::modules()
     CODE:
         RETVAL = newAV();
 
         ModMap::iterator module;
-        for (module = library->Modules.begin(); module != library->Modules.end(); ++module) {
+        for (module = THIS->Modules.begin(); module != THIS->Modules.end(); ++module) {
             SV *name = newSVpv((*module).second->Name(), 0);
             av_push(RETVAL, name);
         }
@@ -31,19 +34,22 @@ list_modules(SWMgr *library)
     OUTPUT:
         RETVAL
 
-SWModule *
-get_module(SWMgr *library, char *name)
+Sword_Module *
+Sword_Manager::module(const char *name)
     CODE:
-        RETVAL = library->getModule(name);
+        RETVAL = THIS->getModule(name);
         if (!RETVAL) XSRETURN_UNDEF;
     
     OUTPUT:
         RETVAL
 
+MODULE = Sword                  PACKAGE = Sword::Module
+
 const char *
-get_key_text(SWModule *module, char *key)
+Sword_Module::lookup_text(const char *key)
     CODE:
-        module->setKey(key);
-        RETVAL = module->RenderText();
+        THIS->setKey(key);
+        RETVAL = THIS->RenderText();
     OUTPUT:
         RETVAL
+
