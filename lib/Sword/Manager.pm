@@ -5,13 +5,11 @@ use warnings;
 require XSLoader;
 XSLoader::load('Sword', $Sword::Manager::VERSION);
 
+# ABSTRACT: Sword library manager
+
 1;
 
 __END__
-
-=head1 NAME
-
-Sword::Manager - Sword library manager
 
 =head1 SYNOPSIS
 

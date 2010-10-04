@@ -5,9 +5,7 @@ use warnings;
 use Sword::Manager;
 use Sword::Module;
 
-=head1 NAME
-
-Sword - provides an interface to the Sword Open Source Bible Software API
+# ABSTRACT: provides an interface to the Sword Open Source Bible Software API
 
 =head1 SYNOPSIS
 

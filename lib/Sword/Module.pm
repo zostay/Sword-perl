@@ -5,13 +5,11 @@ use warnings;
 require XSLoader;
 XSLoader::load('Sword', $Sword::Module::VERSION);
 
+# ABSTRACT: Sword modules (Bibles, commentaries, dictionaries, etc.)
+
 1;
 
 __END__
-
-=head1 NAME
-
-Sword::Module - Sword modules (Bibles, commentaries, dictionaries, etc.)
 
 =head1 SYNOPSIS
 
