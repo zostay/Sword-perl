@@ -73,6 +73,28 @@ This selects a key pointing into the text. The kind of key value used depends on
 
 Use C<increment> to select a key one or more steps forward of the current. Use C<decrement> to select a key backward. If C<$steps> is omitted, the increment/decrement defaults to 1.
 
+=head2 top
+
+=head2 bottom
+
+  $module->top
+  $module->bottom
+
+These set the module to the beginning or end position, respectively.
+
+These are analogous to:
+
+  module->setPosition(TOP);
+  module->setPosition(BOTTOM);
+
+in the C++ API.
+
+=head2 strip_text
+
+  my $str = $module->strip_text;
+
+Show the unfiltered plain text for the current key/position in the module.
+
 =head2 render_text
 
   my $str = $module->render_text;

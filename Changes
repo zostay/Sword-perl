@@ -2,6 +2,7 @@
 
     * Added the increment and decrement methods to Sword::Module
     * Added lookup to the examples scripts
+    * Added the top, bottom, and strip_text methods to Sword::Module
 
 0.102770  2010-10-04 18:18:50 America/Chicago
 

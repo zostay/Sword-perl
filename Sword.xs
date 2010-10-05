@@ -90,9 +90,26 @@ Sword_Module::decrement(int steps = 1)
         THIS->decrement(steps);
 
 void
+Sword_Module::top()
+    CODE:
+        THIS->setPosition(TOP);
+
+void
+Sword_Module::bottom()
+    CODE:
+        THIS->setPosition(BOTTOM);
+
+void
 Sword_Module::set_key(const char *key)
     CODE:
         THIS->setKey(key);
+
+const char *
+Sword_Module::strip_text()
+    CODE:
+        RETVAL = THIS->StripText();
+    OUTPUT:
+        RETVAL
 
 const char *
 Sword_Module::render_text()

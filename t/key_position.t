@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 5;
+use Test::More tests => 7;
 
 use Sword;
 
@@ -31,4 +31,10 @@ SKIP: {
     $kjv->decrement(2);
 
     is($kjv->render_text, "For by grace are ye saved through faith; and that not of yourselves: it is the gift of God:\n", "Decrement 2 returns us to Ephesians 2:8");
+
+    $kjv->top;
+    is($kjv->render_text, "In the beginning God created the heaven and the earth.", "Top takes us to Genesis 1:1");
+
+    $kjv->bottom;
+    is($kjv->render_text, "The grace of our Lord Jesus Christ be with you all. Amen.\n", "Bottom takes us to Revelation 22:21");
 }

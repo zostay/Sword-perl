@@ -35,7 +35,7 @@ for my $module (keys %tests) {
     $subtotal_tests{$module} = 3;
 
     for my $key (keys %{ $tests{$module}{keys} }) {
-        $subtotal_tests{$module}++;
+        $subtotal_tests{$module} += 2;
     }
 
     $total_tests += $subtotal_tests{$module};
@@ -78,6 +78,10 @@ for my $name (keys %tests) {
 
             is($text, $tests{$name}{keys}{$key}, 
                 "lookup $key in $name checks out");
+
+            my $plain_text = $module->strip_text;
+            is ($text, $tests{$name}{keys}{$key},
+                "lookup $key in $name checks out stripped");
         }
     }
 }
