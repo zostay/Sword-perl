@@ -21,6 +21,12 @@ __END__
   $module->set_key('jn3.16');
   print "John 3:16 says (KJV): ", $module->render_text, "\n";
 
+  $module->increment(2);
+  print "John 3:18 says (KJV): ", $module->render_text, "\n";
+
+  $module->decrement;
+  print "John 3:17 says (KJV): ", $module->render_text, "\n";
+
 =head1 DESCRIPTION
 
 This Perl module provides access to the C<SWModule> class from the Sword Engine API.
@@ -55,6 +61,17 @@ This is the getter/setter for the type of the module. This is the name of the ca
   $module->set_key($key);
 
 This selects a key pointing into the text. The kind of key value used depends on the module. For example, in a Bible or commentary, this may be a scripture reference or an abbreviation of one like "John 3:16" or "Ps 23" or "rm8.28". In a dictionary, this may be a word or word number.
+
+=head2 increment
+
+=head2 decrement
+
+  $module->increment;
+  $module->increment($steps);
+  $module->decrement;
+  $module->decrement($steps);
+
+Use C<increment> to select a key one or more steps forward of the current. Use C<decrement> to select a key backward. If C<$steps> is omitted, the increment/decrement defaults to 1.
 
 =head2 render_text
 

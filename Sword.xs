@@ -80,6 +80,16 @@ Sword_Module::type(const char *type = 0)
 	RETVAL
 
 void
+Sword_Module::increment(int steps = 1)
+    CODE:
+        THIS->increment(steps);
+
+void
+Sword_Module::decrement(int steps = 1)
+    CODE:
+        THIS->decrement(steps);
+
+void
 Sword_Module::set_key(const char *key)
     CODE:
         THIS->setKey(key);

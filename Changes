@@ -1,5 +1,8 @@
 {{$NEXT}}
 
+    * Added the increment and decrement methods to Sword::Module
+    * Added lookup to the examples scripts
+
 0.102770  2010-10-04 18:18:50 America/Chicago
 
     * The initial release of the Sword library
