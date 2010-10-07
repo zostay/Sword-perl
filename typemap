@@ -10,7 +10,7 @@ O_OBJECT
 		$var = INT2PTR($type, tmp);
 	}
 	else
-		croak(\"$var is not of type ${(my $ntt=$ntype)=~s/_/::/g;\$ntt}\")
+		croak(\"$var is not of type ${(my $ntt=$ntype)=~s/_/::/g;$ntt=~s/Ptr$//;\$ntt}\")
 
 OUTPUT
 O_OBJECT
