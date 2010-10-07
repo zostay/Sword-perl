@@ -104,6 +104,7 @@ AV *
 Sword_Manager::modules()
     CODE:
         RETVAL = newAV();
+        sv_2mortal((SV *)RETVAL);
 
         ModMap::iterator module;
         for (module = THIS->Modules.begin(); module != THIS->Modules.end(); ++module) {

@@ -72,6 +72,20 @@ L<Sword::Module>
 
 =back
 
+=head1 BUGS
+
+=over
+
+=item *
+
+This almost certainly leaks memory. I need to work on that.
+
+=item *
+
+This library does not yet cover very much of what the Sword API is capable of.
+
+=back
+
 =head1 SEE ALSO
 
 L<Sword::Manager>, L<Sword::Module>.
