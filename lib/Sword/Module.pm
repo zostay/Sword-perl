@@ -71,7 +71,7 @@ This selects a key pointing into the text. The kind of key value used depends on
   $module->decrement;
   $module->decrement($steps);
 
-Use C<increment> to select a key one or more steps forward of the current. Use C<decrement> to select a key backward. If C<$steps> is omitted, the increment/decrement defaults to 1.
+Use C<increment> to moves the key one or more steps forward of the current. Use C<decrement> to move the key backward. If C<$steps> is omitted, the increment/decrement defaults to 1.
 
 =head2 top
 
@@ -80,7 +80,7 @@ Use C<increment> to select a key one or more steps forward of the current. Use C
   $module->top
   $module->bottom
 
-These set the module to the beginning or end position, respectively.
+These set the module key to the beginning or end position, respectively.
 
 These are analogous to:
 

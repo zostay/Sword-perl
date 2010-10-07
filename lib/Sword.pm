@@ -2,6 +2,7 @@ package Sword;
 use strict;
 use warnings;
 
+use Sword::Key;
 use Sword::Manager;
 use Sword::Module;
 
@@ -56,6 +57,10 @@ B<EXPERIMENTAL>. The goal is to reproduce the Sword Engine API in Perl. This is 
 This module exists for convenience and does nothing more than load the most commonly needed modules:
 
 =over
+
+=item *
+
+L<Sword::Key>
 
 =item *
 

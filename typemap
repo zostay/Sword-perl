@@ -1,4 +1,5 @@
 TYPEMAP
+Sword_Key *			O_OBJECT
 Sword_Manager *			O_OBJECT
 Sword_Module *			O_OBJECT
 
