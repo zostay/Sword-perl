@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+0.102800  2010-10-07 15:25:16 America/Chicago
+
     * Added the increment and decrement methods to Sword::Module
     * Added lookup to the examples scripts
     * Added the top, bottom, and strip_text methods to Sword::Module
