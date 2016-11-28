@@ -1,9 +1,10 @@
 package Sword::Module;
+
 use strict;
 use warnings;
 
-require XSLoader;
-XSLoader::load('Sword', $Sword::Module::VERSION);
+# use XSLoader;
+# XSLoader::load('Sword', 0+$Sword::Module::VERSION);
 
 # ABSTRACT: Sword modules (Bibles, commentaries, dictionaries, etc.)
 

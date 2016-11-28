@@ -2,12 +2,20 @@
 use strict;
 use warnings;
 
-use Test::More tests => 15;
+use Test::More;
 
 use_ok('Sword');
 
 my $library = Sword::Manager->new;
 my $module  = $library->get_module('WebstersDict');
+
+if (defined $module) {
+    plan tests => 15;
+}
+else {
+    plan skip_all => "Webster's Dictionary is not installed.";
+}
+
 my $key     = $module->create_key;
 ok($key, 'constructed a key');
 isa_ok($key, 'Sword::Key');

@@ -1,9 +1,10 @@
 package Sword::Manager;
+
 use strict;
 use warnings;
 
-require XSLoader;
-XSLoader::load('Sword', $Sword::Manager::VERSION);
+# use XSLoader;
+# XSLoader::load('Sword', 0+$Sword::Manager::VERSION);
 
 # ABSTRACT: Sword library manager
 

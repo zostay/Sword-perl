@@ -40,10 +40,9 @@ for my $module (keys %tests) {
 
     $total_tests += $subtotal_tests{$module};
 }
-plan tests => 2 + $total_tests;
+plan tests => 1 + $total_tests;
 
-use_ok('Sword::Manager');
-use_ok('Sword::Module');
+use_ok('Sword');
 
 my $library = Sword::Manager->new;
 #diag explain $library;
@@ -76,7 +75,7 @@ for my $name (keys %tests) {
 
             #diag $text;
 
-            is($text, $tests{$name}{keys}{$key}, 
+            is($text, $tests{$name}{keys}{$key},
                 "lookup $key in $name checks out");
 
             my $plain_text = $module->strip_text;

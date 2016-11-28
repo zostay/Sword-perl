@@ -10,7 +10,7 @@ my $library = Sword::Manager->new;
 my $calvin = $library->get_module('Institutes');
 
 SKIP: {
-    skip 'Institutes is not installed', 3 unless $calvin;
+    skip 'Institutes is not installed', 10 unless $calvin;
 
     my $key = $calvin->create_key;
     $calvin->set_key($key);

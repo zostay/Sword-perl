@@ -1,9 +1,10 @@
 package Sword::Key;
+
 use strict;
 use warnings;
 
-require XSLoader;
-XSLoader::load('Sword', $Sword::Key::VERSION);
+# use XSLoader;
+# XSLoader::load('Sword', 0+$Sword::Key::VERSION);
 
 # ABSTRACT: Sword keys may be used to lookup module entries
 

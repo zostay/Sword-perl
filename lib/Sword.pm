@@ -1,10 +1,14 @@
 package Sword;
+
 use strict;
 use warnings;
 
 use Sword::Key;
 use Sword::Manager;
 use Sword::Module;
+
+use XSLoader;
+XSLoader::load();
 
 # ABSTRACT: provides an interface to the Sword Open Source Bible Software API
 
