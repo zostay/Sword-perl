@@ -37,7 +37,7 @@ This documentation should cover everything that you can do with it. If something
 
 This constructs a new Sword Engine manager. This object will automatically load the module configuration from the system, user, and working directory module configuration files. If you have GNOME Sword installed or another Sword-based application, this should load all the library files available to that application.
 
-This constructor configures the library for plain text markup. 
+This constructor configures the library for plain text markup.
 
 Someday, this construction will take options to allow you to customize how the library is constructed, but today is not that day.
 

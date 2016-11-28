@@ -85,9 +85,8 @@ long
 Sword_Key::index(long new_index = -1)
     CODE:
         if (new_index != -1)
-            RETVAL = THIS->Index(new_index);
-        else
-            RETVAL = THIS->Index();
+            THIS->setIndex(new_index);
+        RETVAL = THIS->getIndex();
     OUTPUT:
         RETVAL
 
@@ -131,22 +130,16 @@ Sword_Manager::get_module(const char *name)
 MODULE = Sword                  PACKAGE = Sword::Module
 
 const char *
-Sword_Module::name(const char *name = 0)
+Sword_Module::name()
     CODE:
-        if (name)
-            RETVAL = THIS->Name(name);
-        else
-            RETVAL = THIS->Name();
+        RETVAL = THIS->getName();
     OUTPUT:
     	RETVAL
 
 const char *
-Sword_Module::description(const char *description = 0)
+Sword_Module::description()
     CODE:
-        if (description)
-            RETVAL = THIS->Description(description);
-        else 
-            RETVAL = THIS->Description();
+        RETVAL = THIS->getDescription();
     OUTPUT:
         RETVAL
 
@@ -154,9 +147,8 @@ const char *
 Sword_Module::type(const char *type = 0)
     CODE:
         if (type)
-            RETVAL = THIS->Type(type);
-        else 
-            RETVAL = THIS->Type();
+            THIS->setType(type);
+        RETVAL = THIS->getType();
     OUTPUT:
         RETVAL
 
@@ -197,7 +189,7 @@ Sword_Module::set_key(SV *key)
 Sword_Key *
 Sword_Module::create_key()
     CODE:
-        RETVAL = THIS->CreateKey();
+        RETVAL = THIS->createKey();
     OUTPUT:
         RETVAL
 
@@ -211,14 +203,14 @@ Sword_Module::get_key()
 const char *
 Sword_Module::strip_text()
     CODE:
-        RETVAL = THIS->StripText();
+        RETVAL = THIS->stripText();
     OUTPUT:
         RETVAL
 
 const char *
 Sword_Module::render_text()
     CODE:
-        RETVAL = THIS->RenderText();
+        RETVAL = THIS->renderText();
     OUTPUT:
         RETVAL
 
